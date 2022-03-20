@@ -19,7 +19,7 @@ const calculator = () => {
         textEvent.push(
           <Text
             key={textEvent.length}
-            style={{ marginTop: 10, fontSize: 25, padding: 20 }}
+            style={{ marginTop: 10, fontSize: 25, paddingRight: 20 }}
           >
             {textShow}
           </Text>
@@ -29,7 +29,7 @@ const calculator = () => {
         setTextShow("");
         setTextEvent([]);
       } else {
-        setTextShow(textShow + content);
+        setTextShow(`${textShow}${content}`);
       }
     } catch (e) {
       if (e instanceof SyntaxError) {
@@ -71,7 +71,7 @@ const calculator = () => {
       <View style={styles.board}>
         <View style={styles.lastEvent}>{textEvent}</View>
         <View style={styles.result}>
-          <Text style={{ fontSize: 30, padding: 20 }}>{textShow}</Text>
+          <Text style={{ fontSize: 30, paddingRight: 20 }}>{textShow}</Text>
         </View>
       </View>
       <View style={styles.control}>{controls}</View>
